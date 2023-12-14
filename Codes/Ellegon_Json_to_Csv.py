@@ -4,18 +4,7 @@ import os
 import csv
 import pandas as pd
 import sys
-
-def loadjson(filename):
-    """Load json file from filename."""
-    with open(filename, 'r') as f:
-        data = json.load(f)
-    return data
-
-def savecsv(path,csvdata):
-    """Save csv file to path."""
-    with open(path, 'w', newline='',encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerows(csvdata)
+from Utils import loadcsv,savecsv,loadjson
 
 def read_collection(data,savepath):
     documents = data['data']['documents']
@@ -43,8 +32,9 @@ def read_collection(data,savepath):
             t+=1
         savecsv(os.path.join(savepath, csvname),csvdata)
         
-        
-
+# 2 arguments are needed:        
+# 1.Path to the json file or folder containing json files
+# 2.Path to the folder where the csv files will be saved
 if __name__ == '__main__':
     path =  sys.argv[1]
     savepath = sys.argv[2]
