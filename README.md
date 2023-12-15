@@ -24,7 +24,7 @@ python Codes\Ellegon_Json_to_Csv.py <path to JSON/Folder> <path to save folder>
 The export files for each annotation have the following format:
 
 |text |start point |end point |annotation|
-
+|---|---|---|---|
 ---
 
 
